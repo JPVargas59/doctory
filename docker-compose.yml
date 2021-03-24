@@ -1,12 +1,13 @@
 version: "3.8"
-   
+
 services:
   db:
     image: postgres
     environment:
-      - POSTGRES_DB=doctory
-      - POSTGRES_USER=doctory
-      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=d6t5p59282ukia
+      - POSTGRES_USER=juivwnkvrbclpq
+      - POSTGRES_PASSWORD=f625e7227872ba8781d475b03ae603e9d4c863c9e48fb2e2bfbdcf27ffc02e6a
+      - DATABASE_URL=ec2-52-71-161-140.compute-1.amazonaws.com
     volumes:
       - pgdata:/var/lib/postgresql/data
 

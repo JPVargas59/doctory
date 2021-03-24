@@ -1,0 +1,19 @@
+FROM python:3.8
+
+ENV PYTHONUNBUFFERED=1
+ENV POSTGRES_DB=d6t5p59282ukia
+ENV POSTGRES_USER=juivwnkvrbclpq
+ENV POSTGRES_PASSWORD=f625e7227872ba8781d475b03ae603e9d4c863c9e48fb2e2bfbdcf27ffc02e6a
+ENV DATABASE_URL=ec2-52-71-161-140.compute-1.amazonaws.com
+
+RUN mkdir /doctory
+WORKDIR /doctory
+
+
+COPY requirements.txt /doctory/
+
+RUN pip install -r requirements.txt
+
+COPY . /doctory/
+
+RUN python manage.py migrate

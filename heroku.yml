@@ -1,0 +1,4 @@
+build:
+  docker:
+    web: doctory/Dockerfile.django
+    react: app/Dockerfile.react
