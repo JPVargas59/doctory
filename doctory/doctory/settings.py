@@ -29,6 +29,8 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+AUTH_USER_MODEL = 'core.User'
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -38,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'core',
 ]
 
 MIDDLEWARE = [
@@ -80,13 +84,9 @@ DATABASES = {
         'NAME': environ['POSTGRES_DB'],
         'USER': environ['POSTGRES_USER'],
         'PASSWORD': environ['POSTGRES_PASSWORD'],
-        'HOST': 'db',
+        'HOST': environ['DATABASE_URL'],
         'PORT': 5432,
     }
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'db.sqlite3',
-    # }
 }
 
 
